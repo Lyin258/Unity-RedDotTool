@@ -16,17 +16,17 @@ namespace CommonRedDot
             if (_nodes.TryGetValue(key, out var node))
                 return node;
 
-            node = new RedDotNode(key, type);
+            node = new RedDotNode(key, type, color);
             _nodes[key] = node;
 
-            Root ??= new RedDotNode("ROOT", RedDotType.Toggle);
+            Root ??= new RedDotNode("ROOT", RedDotType.Toggle, RedDotColor.Red);
 
             // 根据 key 建立层级
             int lastDot = key.LastIndexOf('.');
             if (lastDot > 0)
             {
                 string parentKey = key.Substring(0, lastDot);
-                var parent = GetOrCreateNode(parentKey, RedDotType.Toggle, RedDotColor.Red);
+                var parent = GetOrCreateNode(parentKey, RedDotType.Toggle, color);
                 parent.AddChild(node);
             }
             else
@@ -56,8 +56,8 @@ namespace CommonRedDot
     public class RedDotKeys
     {
         // 示例
-        // public const string RedDotKey1 = "MainRed1";
-        // public const string RedDotKey1 = "MainRed1.Children1";
-        // public const string RedDotKey1 = "MainRed1.Children1.NextChildren1";
+        // public const string RedDotKey1 = "RedDotKey1";
+        public const string GemVaultMain = "GemVaultMain";
+        public const string VolcanoMain = "VolcanoMain";
     }
 }

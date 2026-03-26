@@ -19,7 +19,7 @@ namespace CommonRedDot
             node = new RedDotNode(key, type, color);
             _nodes[key] = node;
 
-            Root ??= new RedDotNode("ROOT", RedDotType.Toggle, RedDotColor.Red);
+            Root ??= new RedDotNode("ROOT", RedDotType.Toggle);
 
             // 根据 key 建立层级
             int lastDot = key.LastIndexOf('.');
@@ -56,6 +56,6 @@ namespace CommonRedDot
     public class RedDotKeys
     {
         // 示例
-        // public const string RedDotKey1 = "RedDotKey1";
+        public const string RedDotKey1 = "RedDotKey1";
     }
 }

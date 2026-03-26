@@ -34,7 +34,7 @@ namespace CommonRedDot
         
         public bool IsActive => TotalCount > 0;
 
-        public RedDotNode(string key, RedDotType type, RedDotColor color = RedDotColor.Red)
+        public RedDotNode(string key, RedDotType type, RedDotColor color)
         {
             Key = key;
             Type = type;

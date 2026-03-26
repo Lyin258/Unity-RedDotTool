@@ -57,7 +57,5 @@ namespace CommonRedDot
     {
         // 示例
         // public const string RedDotKey1 = "RedDotKey1";
-        public const string GemVaultMain = "GemVaultMain";
-        public const string VolcanoMain = "VolcanoMain";
     }
 }
